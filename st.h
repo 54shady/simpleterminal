@@ -132,5 +132,7 @@ extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
 extern float alpha;
+#ifdef ENABLE_MOUSE_WHEEL_SHORTCUT
 extern MouseKey mkeys[];
+#endif
 extern int ximspot_update_interval;

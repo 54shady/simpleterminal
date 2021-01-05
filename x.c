@@ -442,6 +442,7 @@ bpress(XEvent *e)
 		return;
 	}
 
+#ifdef ENABLE_MOUSE_WHEEL_SHORTCUT
 	for (ms = mshortcuts; ms < mshortcuts + LEN(mshortcuts); ms++) {
 		if (e->xbutton.button == ms->b
 				&& match(ms->mask, e->xbutton.state)) {
@@ -457,6 +458,7 @@ bpress(XEvent *e)
 			return;
 		}
 	}
+#endif
 
 	if (e->xbutton.button == Button1) {
 		/*
