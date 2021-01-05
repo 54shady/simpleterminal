@@ -263,7 +263,10 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
 	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_p,           selpaste,       {.i =  0} },
+
+	/* under any mode, Mouse wheel press will paste the selected text */
 	{ XK_ANY_MOD,		Button2,	selpaste,	{.i =  0} },
+
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_Control_L,   iso14755,       {.i =  0} },
 	//{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
@@ -278,14 +281,19 @@ static Shortcut shortcuts[] = {
 	//{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	//{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
 	//{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
+
+	/* zoom shortcut */
 	/* alt + shift + - */
 	{ TERMMOD,              XK_underscore,           zoom,           {.f = -1} },
 	/* alt + shift + = */
 	{ TERMMOD,              XK_plus,           zoom,           {.f = +1} },
 	/* alt + shift + 0 */
 	{ TERMMOD,               XK_parenright,        zoomreset,      {.f =  0} },
+
 	//{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
 	//{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
+
+	/* url handler shortcut */
 	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
