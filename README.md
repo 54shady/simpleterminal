@@ -1,6 +1,12 @@
 # zeroway's build of st - the simple (suckless) terminal
 
+## Intro
+
 The [suckless terminal (st)](https://st.suckless.org/) with some additional features that make it literally the best terminal emulator ever:
+
+## Desktop Entry
+
+The desktop entry name is **simpleterm** define in ebuild
 
 ## Unique features (using dmenu)
 
@@ -32,6 +38,7 @@ The [suckless terminal (st)](https://st.suckless.org/) with some additional feat
 
 ## ~~Installation for newbs~~
 
+Using the st-9999.ebuild for Gentoo base users.
 Obviously, `make` is required to build. `fontconfig` is required for the default build, since it asks `fontconfig` for your system monospace font.  It might be obvious, but `libX11` and `libXft` are required as well. Chances are, you have all of this installed already.
 
 On OpenBSD, be sure to edit `config.mk` first and remove `-lrt` from the `$LIBS` before compiling.
