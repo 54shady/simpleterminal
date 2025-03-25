@@ -261,6 +261,8 @@ MouseKey mkeys[] = {
 };
 #endif
 
+// xdg-settings get default-web-browser
+// org.qutebrowser.qutebrowser.desktop
 static char *openurlcmd[] = { "/bin/sh", "-c",
     "sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./&%?$#=_-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)'| uniq | sed 's/^www./http:\\/\\/www\\./g' | rofi -width 50 -dmenu -i -p 'Follow which url?' -l 10 | xargs -r xdg-open", "externalpipe", NULL };
 
