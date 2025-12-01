@@ -261,8 +261,35 @@ MouseKey mkeys[] = {
 };
 #endif
 
-// xdg-settings get default-web-browser
-// org.qutebrowser.qutebrowser.desktop
+/*
+ *xdg-settings get default-web-browser
+ * org.qutebrowser.qutebrowser.desktop
+ *
+ * create desktop file using command below
+ *
+ *		sudo tee /usr/share/applications/qutebrowser.desktop << 'EOF'
+ *		[Desktop Entry]
+ *		Version=1.0
+ *		Name=Qutebrowser
+ *		GenericName=Web Browser
+ *		Comment=A keyboard-driven web browser
+ *		Exec=/usr/local/bin/qutebrowser %u
+ *		Icon=qutebrowser
+ *		Terminal=false
+ *		Type=Application
+ *		MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+ *		Categories=Network;WebBrowser;
+ *		StartupNotify=true
+ *		StartupWMClass=qutebrowser
+ *		EOF
+ *
+ * update the database of desktop
+ *		sudo update-desktop-database
+ *
+ *	xdg-settings get default-web-browser
+ *	qutebrowser.desktop
+ */
+
 /*
  * in ubuntu system, while install the chrome
  * update-alternatives --list x-www-browser
