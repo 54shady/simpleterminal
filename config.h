@@ -263,6 +263,16 @@ MouseKey mkeys[] = {
 
 // xdg-settings get default-web-browser
 // org.qutebrowser.qutebrowser.desktop
+/*
+ * in ubuntu system, while install the chrome
+ * update-alternatives --list x-www-browser
+ *		/usr/bin/google-chrome-stable
+ *
+ * using below command to change default web browser using qutebrowser
+ * sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/local/bin/qutebrowser 100
+ * sudo update-alternatives --set x-www-browser /usr/local/bin/qutebrowser
+ * sudo update-alternatives --remove x-www-browser /usr/bin/google-chrome-stable
+ */
 static char *openurlcmd[] = { "/bin/sh", "-c",
     "sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./&%?$#=_-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)'| uniq | sed 's/^www./http:\\/\\/www\\./g' | rofi -width 50 -dmenu -i -p 'Follow which url?' -l 10 | xargs -r xdg-open", "externalpipe", NULL };
 
