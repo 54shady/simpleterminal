@@ -14,6 +14,10 @@ On OpenBSD, be sure to edit `config.mk` first and remove `-lrt` from the `$LIBS`
 
 Be sure to have a composite manager (`xcompmgr`, `compton`, etc.) running if you want transparency.
 
+### install for ubuntu
+
+	apt install -y pkg-config libfreetype-dev libfontconfig-dev gcc libx11-dev libxft-dev
+
 ## Desktop Entry
 
 The desktop entry name is **simpleterm** define in ebuild
