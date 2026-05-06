@@ -80,3 +80,24 @@ Note that when you run `wal`, it will negate the transparency of existing window
 If st crashes when viewing emojis, install [libxft-bgra](https://github.com/54shady/libXft-bgra) from the overlay.
 
 Note that some special characters may appear truncated if too wide. You might want to manually set your prefered emoji/special character font to a lower size in the `config.h` file to avoid this. By default.
+
+## compile issue
+
+issue1:(as: unrecognized option '--64')
+
+	make
+	st build options:
+	CFLAGS  = -I/usr/X11R6/include  -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16  -I/usr/include/freetype2 -I/usr/include/libpng16 -DVERSION="0.8.2" -D_XOPEN_SOURCE=600  -O1
+	LDFLAGS = -L/usr/X11R6/lib -L/usr/local/lib -lm -lrt -lX11 -lutil -lXft -lXrender  -lfontconfig -lfreetype  -lfreetype
+	CC      = c99
+	c99 -I/usr/X11R6/include  `pkg-config --cflags fontconfig`  `pkg-config --cflags freetype2` -DVERSION=\"0.8.2\" -D_XOPEN_SOURCE=600  -O1 -c st.c
+	as: unrecognized option '--64'
+	make: *** [Makefile:22: st.o] Error 1
+
+	//发现esp32的as会覆盖默认的as
+	which as
+	/home/zeroway/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/esp32ulp-elf/bin/as
+
+	//解决方法
+	export PATH=/usr/bin:$PATH
+	make
